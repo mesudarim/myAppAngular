@@ -1,0 +1,30 @@
+<h1>{{pageTitle}}</h1>
+
+<div>
+  Search <input type="text">
+</div>
+<div class="table-responsive">
+  <table class="table table-striped" *ngIf='products && products.length'>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Code</th>
+        <th>Date</th>
+        <th>Price</th>
+        <th>Rating</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let product of products'>
+        <td>{{product.productName}}</td>
+        <td>{{product.productCode}}</td>
+        <td>{{product.releaseDate}}</td>
+        <td>{{product.price}}</td>
+        <td>{{product.starRating}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<pre>
+  {{ products | json }}
+</pre>
